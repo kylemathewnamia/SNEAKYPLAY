@@ -1,4 +1,3 @@
-/* Orders Page Specific Styles - Updated with Shop.css Color Scheme */
 .orders-main-content {
     padding: 30px;
     background: #f8f9fa;
@@ -704,4 +703,5 @@
     .filter-tabs {
         justify-content: center;
     }
+
 }
