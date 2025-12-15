@@ -1,8 +1,3 @@
-/* Login CSS is the base, we'll add/register specific styles */
-/* This file inherits from login.css */
-
-/* Additional styles specific to register page */
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -223,4 +218,5 @@ body {
 .form-check-label a:hover {
     color: #ff5252;
     text-decoration: underline;
+
 }
