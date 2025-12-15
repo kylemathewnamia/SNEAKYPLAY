@@ -13,7 +13,7 @@ if (!isset($_SESSION['login_attempts'])) {
 
 // Database configuration
 $host = 'localhost';
-$dbname = 'sneakysheets'; // Make sure this matches your actual database
+$dbname = 'sneakysheets';
 $username = 'root';
 $password = '';
 
@@ -564,5 +564,6 @@ $recentReviews = $stmt->fetchAll();
         resetIdleTimer();
     </script>
 </body>
+
 
 </html>
