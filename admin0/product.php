@@ -1,5 +1,4 @@
 <?php
-// MUST BE FIRST LINE
 session_start();
 
 // Get user name
@@ -64,7 +63,7 @@ ob_start();
 
             </div>
 
-            <!-- User & Logout - Exactly like the image -->
+            <!-- User & Logout -->
             <div class="admin-user">
                 <div class="user-circle">
                     <span class="user-initial"><?php echo strtoupper(substr($_SESSION['admin_name'], 0, 1)); ?></span>
@@ -194,7 +193,6 @@ ob_start();
                                 <span class="category-badge">' . htmlspecialchars($product['category_name']) . '</span>
                                 <div class="image-placeholder">';
 
-                            // Display actual image if it exists, otherwise show icon
                             if ($has_image && !empty($actual_image_path)) {
                                 echo '<img src="' . $actual_image_path . '" 
                                  alt="' . htmlspecialchars($product['product_name']) . '"
@@ -363,5 +361,6 @@ ob_start();
 
     <?php ob_end_flush(); ?>
 </body>
+
 
 </html>
