@@ -1,4 +1,3 @@
-/* Admin Dashboard CSS - COMPLETE FILE */
 :root {
   --primary-color: #ff6b6b;
   --secondary-color: #14141e;
@@ -798,4 +797,5 @@
     height: 26px;
     font-size: 14px;
   }
+
 }
