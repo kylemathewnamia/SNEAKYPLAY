@@ -1,5 +1,4 @@
 <?php
-// edit-order.php
 session_start();
 if (!isset($_SESSION['admin_id'])) {
     header('Location: ../login.php');
@@ -374,5 +373,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </footer>
 </body>
+
 
 </html>
