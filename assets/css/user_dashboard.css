@@ -1,15 +1,9 @@
-/* user_dashboard.css - Transformed to Match Modern E-commerce Style */
 :root {
     --primary-color: #14141e;
-    /* Dark blue from first site */
     --secondary-color: #ff6b6b;
-    /* Coral red from first site */
     --accent-color: #6c63ff;
-    /* Purple accent */
     --dark-bg: #14141e;
-    /* Dark background */
     --light-bg: #f8f9fa;
-    /* Light background from first site */
     --text-primary: #111827;
     --text-secondary: #6b7280;
     --border-color: #e5e7eb;
@@ -462,7 +456,6 @@ body {
 }
 
 /* ====== PRODUCT IMAGE SIZES ====== */
-/* Make product images smaller and consistent */
 .product-image {
     height: 140px !important;
     /* Reduced from 200px */
@@ -1029,4 +1022,5 @@ tbody tr:hover {
     .stat-content {
         text-align: left;
     }
+
 }
