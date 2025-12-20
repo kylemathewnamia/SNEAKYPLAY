@@ -1,9 +1,4 @@
 <?php
-// =============================================
-// FILE: logout.php
-// PURPOSE: Simple logout - destroy session and go to login page
-// =============================================
-
 // 1. Start the session
 session_start();
 

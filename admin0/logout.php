@@ -8,4 +8,3 @@ session_destroy();
 // Redirect to admin login
 header('Location: admin.php');
 exit;
-?>

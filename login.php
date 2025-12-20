@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $stmt->fetch();
 
         if ($user && password_verify($password, $user['password'])) {
-            // Password is correct, start session 
+            // Password is correct, start session - FIXED: Changed $user['id'] to $user['user_id']
             $_SESSION['user_id'] = $user['user_id']; // This was line 46
             $_SESSION['user_name'] = $user['name'];
             $_SESSION['user_email'] = $user['email'];
@@ -57,8 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 setcookie('remember_email', $email, time() + (86400 * 30), "/"); // 30 days
             }
 
-            // Redirect to USER DASHBOARD 
-            header("Location:user/index.php");
+            // Redirect to USER DASHBOARD (not root index.php)
+            header("Location:users/index.php");
             exit();
         } else {
             $errors[] = "Invalid email or password";
@@ -69,9 +69,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['login_errors'] = $errors;
 }
 
-// Check if user is already logged in 
+// Check if user is already logged in - REDIRECT TO USER DASHBOARD
 if (isset($_SESSION['user_id'])) {
-    header("Location: user/index.php");
+    header("Location: users/index.php");
     exit();
 }
 
@@ -90,17 +90,9 @@ $remembered_email = isset($_COOKIE['remember_email']) ? $_COOKIE['remember_email
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - SneakyPLay</title>
-
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Google Fonts - Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- External CSS -->
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="icon" type="image/png" href="assets/image/logo.png">
 
@@ -240,6 +232,5 @@ $remembered_email = isset($_COOKIE['remember_email']) ? $_COOKIE['remember_email
         }
     </script>
 </body>
-
 
 </html>

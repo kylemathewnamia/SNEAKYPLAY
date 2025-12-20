@@ -101,8 +101,8 @@ $special_offers = $offers_stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <span><?php echo htmlspecialchars($user['name'] ?? $_SESSION['username'] ?? 'User'); ?></span>
                 <div class="dropdown">
-                    <a href="profile.php"><i class="fas fa-user"></i> My Profile</a>
-                    <a href="settings.php"><i class="fas fa-cog"></i> Settings</a>
+                    <a href="#"><i class="fas fa-user"></i> My Profile</a>
+                    <a href="#"><i class="fas fa-cog"></i> Settings</a>
                     <a href="../logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
             </div>
@@ -205,9 +205,9 @@ $special_offers = $offers_stmt->fetchAll(PDO::FETCH_ASSOC);
                                             </span>
                                         </td>
                                         <td>
-                                            <button class="btn btn-primary btn-sm">
-                                                View Details
-                                            </button>
+                                            <a href="order-confirmation.php?id=<?php echo $order['order_id']; ?>" class="btn btn-primary">
+                                                <i class="fas fa-eye"></i> View Details
+                                            </a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -218,7 +218,7 @@ $special_offers = $offers_stmt->fetchAll(PDO::FETCH_ASSOC);
                             <i class="fas fa-shopping-bag"></i>
                             <h3>No orders yet</h3>
                             <p>Start shopping to see your orders here</p>
-                            <a href="../user/shop.php" class="btn btn-primary">Browse Products</a>
+                            <a href="../users/shop.php" class="btn btn-primary">Browse Products</a>
                         </div>
                     <?php endif; ?>
                 </div>

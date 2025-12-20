@@ -123,17 +123,9 @@ $address = isset($_POST['address']) ? $_POST['address'] : '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - SneakyPlay</title>
-
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Google Fonts - Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- External CSS -->
     <link rel="stylesheet" href="assets/css/register.css">
     <link rel="icon" type="image/png" href="assets/image/logo.png">
 
@@ -223,7 +215,7 @@ $address = isset($_POST['address']) ? $_POST['address'] : '';
                                 <div class="invalid-feedback">Please enter a valid contact number.</div>
                             </div>
 
-                            <!-- NEW: Address Field -->
+                            <!-- Address Field -->
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="register-address" name="address" placeholder="Address" style="height: 100px"><?php echo htmlspecialchars($address); ?></textarea>
                                 <label for="register-address">Address (Optional)</label>
@@ -283,10 +275,8 @@ $address = isset($_POST['address']) ? $_POST['address'] : '';
         </div>
     </div>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- External JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/register.js"></script>
 </body>
 

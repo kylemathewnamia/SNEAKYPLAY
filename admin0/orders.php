@@ -148,7 +148,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['bulk_action'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orders Management | SneakyPlay</title>
     <link rel="stylesheet" href="../assets/css/admin.css">
-    <link rel="stylesheet" href="../assets/css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="../assets/image/logo.png">
 </head>
@@ -326,91 +325,74 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['bulk_action'])) {
                             </span>
                         </div>
 
-                        <div class="bulk-buttons">
-                            <select name="new_status" class="form-control" style="width: auto; padding: 0.6rem; border-radius: 6px;">
-                                <option value="">Update Status to...</option>
-                                <option value="pending">Pending</option>
-                                <option value="processing">Processing</option>
-                                <option value="paid">Paid</option>
-                                <option value="shipped">Shipped</option>
-                                <option value="delivered">Delivered</option>
-                                <option value="cancelled">Cancelled</option>
-                            </select>
-
-                            <button type="submit" name="bulk_action" value="update_status" class="btn-small">
-                                <i class="fas fa-sync-alt"></i> Update
-                            </button>
-
-                            <button type="submit" name="bulk_action" value="delete" class="btn-small" onclick="return confirmBulkDelete()" style="background: var(--danger-color);">
-                                <i class="fas fa-trash"></i> Delete
-                            </button>
-                        </div>
+                        <button type="submit" name="bulk_action" value="delete" class="btn-small btn-delete" onclick="return confirmBulkDelete()">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
                     </div>
+            </div>
 
-                    <!-- Orders Table -->
-                    <div class="table-container">
-                        <table class="admin-table">
-                            <thead>
+            <!-- Orders Table -->
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th width="50"></th>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Items</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (!empty($orders)): ?>
+                            <?php foreach ($orders as $order): ?>
                                 <tr>
-                                    <th width="50"></th>
-                                    <th>Order ID</th>
-                                    <th>Customer</th>
-                                    <th>Date</th>
-                                    <th>Items</th>
-                                    <th>Amount</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
+                                    <td>
+                                        <input type="checkbox" name="selected_orders[]" value="<?php echo $order['order_id']; ?>" class="order-checkbox">
+                                    </td>
+                                    <td>
+                                        <strong>#<?php echo str_pad($order['order_id'], 6, '0', STR_PAD_LEFT); ?></strong>
+                                    </td>
+                                    <td>
+                                        <strong><?php echo htmlspecialchars($order['customer_name']); ?></strong><br>
+                                        <small style="color: var(--text-secondary);"><?php echo htmlspecialchars($order['email']); ?></small>
+                                    </td>
+                                    <td><?php echo date('M d, Y', strtotime($order['order_date'])); ?></td>
+                                    <td><?php echo $order['item_count']; ?> item(s)</td>
+                                    <td><strong>₱<?php echo number_format($order['total_amount'], 2); ?></strong></td>
+                                    <td>
+                                        <span class="status-badge <?php echo strtolower($order['status']); ?>">
+                                            <?php echo strtoupper($order['status']); ?>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div style="display: flex; gap: 8px;">
+                                            <a href="view-order.php?id=<?php echo $order['order_id']; ?>" class="btn-action btn-view">
+                                                <i class="fas fa-eye"></i> View
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <?php if (!empty($orders)): ?>
-                                    <?php foreach ($orders as $order): ?>
-                                        <tr>
-                                            <td>
-                                                <input type="checkbox" name="selected_orders[]" value="<?php echo $order['order_id']; ?>" class="order-checkbox">
-                                            </td>
-                                            <td>
-                                                <strong>#<?php echo str_pad($order['order_id'], 6, '0', STR_PAD_LEFT); ?></strong>
-                                            </td>
-                                            <td>
-                                                <strong><?php echo htmlspecialchars($order['customer_name']); ?></strong><br>
-                                                <small style="color: var(--text-secondary);"><?php echo htmlspecialchars($order['email']); ?></small>
-                                            </td>
-                                            <td><?php echo date('M d, Y', strtotime($order['order_date'])); ?></td>
-                                            <td><?php echo $order['item_count']; ?> item(s)</td>
-                                            <td><strong>₱<?php echo number_format($order['total_amount'], 2); ?></strong></td>
-                                            <td>
-                                                <span class="status-badge <?php echo strtolower($order['status']); ?>">
-                                                    <?php echo strtoupper($order['status']); ?>
-                                                </span>
-                                            </td>
-                                            <td>
-
-                                                <a href="edit-order.php?id=<?php echo $order['order_id']; ?>" class="btn-action btn-edit">
-                                                    <i class="fas fa-edit"></i> Edit
-                                                </a>
-                    </div>
-                    </td>
-                    </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="8" class="text-center">
-                        <div class="empty-state">
-                            <i class="fas fa-shopping-bag"></i>
-                            <h3>No orders found</h3>
-                            <p>No orders match your current filters.</p>
-                            <?php if (!empty($status_filter) || !empty($date_from) || !empty($date_to) || !empty($search)): ?>
-                                <a href="orders.php" class="btn-filter" style="margin-top: 1rem;">
-                                    <i class="fas fa-times"></i> Clear Filters
-                                </a>
-                            <?php endif; ?>
-                        </div>
-                    </td>
-                </tr>
-            <?php endif; ?>
-            </tbody>
-            </table>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="8" class="text-center">
+                                    <div class="empty-state">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <h3>No orders found</h3>
+                                        <p>No orders match your current filters.</p>
+                                        <?php if (!empty($status_filter) || !empty($date_from) || !empty($date_to) || !empty($search)): ?>
+                                        <?php endif; ?>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
             </div>
             </form>
 
@@ -444,14 +426,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['bulk_action'])) {
         </div>
         </div>
     </main>
-
-    <!-- Footer - Optional -->
-    <footer class="shop-footer" style="margin-top: 3rem;">
-        <div class="container">
-            <p>&copy; <?php echo date('Y'); ?> SneakyPlay Gaming Store. All rights reserved.</p>
-            <p>Order Management System</p>
-        </div>
-    </footer>
 
     <script>
         // Select All checkbox functionality

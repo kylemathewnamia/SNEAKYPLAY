@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2025 at 01:01 PM
+-- Generation Time: Dec 19, 2025 at 07:13 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,7 +36,6 @@ CREATE TABLE `admins` (
   `last_login` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` enum('active','inactive','suspended') DEFAULT 'active'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admins`
@@ -74,7 +73,37 @@ INSERT INTO `admin_audit_log` (`log_id`, `admin_id`, `action`, `details`, `ip_ad
 (4, 3, 'UPDATE_ORDER_STATUS', 'Updated order #17 from \'\' to \'paid\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-15 11:26:21'),
 (5, 3, 'UPDATE_ORDER_STATUS', 'Updated order #17 from \'\' to \'shipped\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-15 11:28:20'),
 (6, 3, 'UPDATE_ORDER_STATUS', 'Updated order #17 from \'shipped\' to \'shipped\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-15 11:28:21'),
-(7, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'pending\' to \'delivered\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-15 11:48:53');
+(7, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'pending\' to \'delivered\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-15 11:48:53'),
+(8, 3, 'UPDATE_ORDER_STATUS', 'Updated order #20 from \'pending\' to \'paid\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-15 13:10:39'),
+(9, 3, 'UPDATE_ORDER_STATUS', 'Updated order #22 from \'pending\' to \'delivered\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-16 09:02:55'),
+(10, 3, 'UPDATE_ORDER_STATUS', 'Updated order #24 from \'pending\' to \'delivered\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-17 05:04:41'),
+(11, 3, 'UPDATE_ORDER_STATUS', 'Updated order #25 from \'pending\' to \'paid\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-17 05:09:03'),
+(12, 3, 'UPDATE_ORDER_STATUS', 'Updated order #17 from \'pending\' to \'shipped\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 15:51:26'),
+(13, 3, 'UPDATE_ORDER_STATUS', 'Updated order #17 from \'shipped\' to \'cancelled\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 16:03:18'),
+(14, 3, 'UPDATE_ORDER_STATUS', 'Updated order #17 from \'cancelled\' to \'delivered\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 16:03:31'),
+(15, 3, 'UPDATE_ORDER_STATUS', 'Updated order #17 from \'delivered\' to \'paid\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 16:33:16'),
+(16, 3, 'UPDATE_ORDER_STATUS', 'Updated order #17 from \'\' to \'processing\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 16:46:05'),
+(17, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'pending\' to \'paid\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:11:52'),
+(18, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'\' to \'paid\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:37:35'),
+(19, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'\' to \'paid\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:37:56'),
+(20, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'\' to \'paid\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:43:17'),
+(21, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'\' to \'delivered\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:44:06'),
+(22, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'delivered\' to \'shipped\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:44:14'),
+(23, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'shipped\' to \'pending\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:44:28'),
+(24, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'pending\' to \'pending\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:47:00'),
+(25, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'pending\' to \'paid\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:47:07'),
+(26, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'\' to \'processing\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:47:12'),
+(27, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'processing\' to \'paid\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:47:19'),
+(28, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'\' to \'paid\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:47:27'),
+(29, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'\' to \'processing\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:48:33'),
+(30, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'processing\' to \'cancelled\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:49:55'),
+(31, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'cancelled\' to \'pending\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:50:08'),
+(32, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'pending\' to \'processing\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:50:15'),
+(33, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'processing\' to \'shipped\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:50:25'),
+(34, 3, 'UPDATE_ORDER_STATUS', 'Updated order #18 from \'shipped\' to \'delivered\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:50:32'),
+(35, 3, 'UPDATE_ORDER_STATUS', 'Updated order #19 from \'pending\' to \'shipped\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:52:21'),
+(36, 3, 'UPDATE_ORDER_STATUS', 'Updated order #21 from \'pending\' to \'delivered\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:55:42'),
+(37, 3, 'UPDATE_ORDER_STATUS', 'Updated order #20 from \'pending\' to \'cancelled\'', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', '2025-12-19 17:55:48');
 
 -- --------------------------------------------------------
 
@@ -92,7 +121,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cart_id`, `user_id`) VALUES
-(1, 15);
+(1, 15),
+(6, 22);
 
 -- --------------------------------------------------------
 
@@ -193,11 +223,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `price`, `description`, `categories_id`, `image`, `stock_quantity`) VALUES
-(2, 'PlayStation 5 Console', 27990, 'The PS5 console unleashes new gaming possibilities that you never anticipated. ', 1, 'playstation.jpg', 22),
-(3, 'Nintendo Switch V2', 14990, ' Bring games to life with a larger 1080p screen—or connect to a TV and play in up to 4K resolution', 1, 'nintendo.jpg', 14),
-(9, 'Mouse', 500, 'A gaming mouse is a mouse that\'s specifically designed for computer (PC ) gaming. These high performance mice are built to give you added speed and precision, as well as additional mappable buttons that you can use to your advantage in game.', 3, 'mouse.jpg', 124),
-(10, 'Headset', 1000, 'Gaming headsets are an all-in-one solution to immerse yourself in games while chatting with friends and teammates. They\'re over-the-ear headphones equipped with a clear microphone. You can usually distinguish these headsets as they have a bulky build and come with RGB lighting.', 3, 'jbl.jpg', 73),
-(11, 'Controller', 2500, 'A gamepad, also known as a controller, is a handheld input device used to interact with video games. It typically consists of buttons, triggers, thumbsticks, and sometimes a directional pad (D-pad).', 3, 'controller.jpg', 69);
+(2, 'PlayStation 5 Console', 27990, 'The PS5 console unleashes new gaming possibilities that you never anticipated. ', 1, 'playstation.jpg', 11),
+(3, 'Nintendo Switch V2', 14990, ' Bring games to life with a larger 1080p screen—or connect to a TV and play in up to 4K resolution', 1, 'nintendo.jpg', 10),
+(9, 'Mouse', 500, 'A gaming mouse is a mouse that\'s specifically designed for computer (PC ) gaming. These high performance mice are built to give you added speed and precision, as well as additional mappable buttons that you can use to your advantage in game.', 3, 'mouse.jpg', 116),
+(10, 'Headset', 1000, 'Gaming headsets are an all-in-one solution to immerse yourself in games while chatting with friends and teammates. They\'re over-the-ear headphones equipped with a clear microphone. You can usually distinguish these headsets as they have a bulky build and come with RGB lighting.', 3, 'jbl.jpg', 62),
+(11, 'Controller', 2500, 'A gamepad, also known as a controller, is a handheld input device used to interact with video games. It typically consists of buttons, triggers, thumbsticks, and sometimes a directional pad (D-pad).', 3, 'controller.jpg', 58);
 
 -- --------------------------------------------------------
 
@@ -257,7 +287,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `contact_no`, `address`, `date_registered`) VALUES
-(15, 'Nami Nami', 'nami@gmail.com', '$2y$10$nXCLzG2/M1xPXkKiyfsluOcNVwl4Fy9wxBCjxHAQ4F0oO0rcdHFFK', '092737749323', 'Taga Malabg', '2025-12-07 00:29:30');
+(15, 'Nami Nami', 'nami@gmail.com', '$2y$10$nXCLzG2/M1xPXkKiyfsluOcNVwl4Fy9wxBCjxHAQ4F0oO0rcdHFFK', '092737749323', 'Taga Malabg', '2025-12-07 00:29:30'),
+(22, 'Reymar Llagas', 'rallagas@gmail.com', '$2y$10$li1zKOedcTkm80WfTDydV.wYFoRxd83ldz38BJ5gwfp3DRiYQF69G', '093222355510', 'Taga manila', '2025-12-17 12:59:57');
 
 --
 -- Indexes for dumped tables
@@ -347,37 +378,37 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `admin_audit_log`
 --
 ALTER TABLE `admin_audit_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `cart_items`
 --
 ALTER TABLE `cart_items`
-  MODIFY `cart_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `cart_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Constraints for dumped tables

@@ -165,7 +165,6 @@ if (!isset($_SESSION['admin_id']) || empty($_SESSION['admin_id'])) {
 
                 <div class="admin-login-footer">
                     <p><a href="../index.php"><i class="fas fa-arrow-left"></i> Back to Main Site</a></p>
-                    <small>Default: admin@sneakyplay.com / admin123</small>
                 </div>
             </div>
         </div>
@@ -251,6 +250,7 @@ $recentReviews = $stmt->fetchAll();
     <title>Admin Dashboard - SneakyPlay</title>
     <link rel="stylesheet" href="../assets/css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/image/logo.png">
 </head>
 
 <body class="admin-dashboard">
@@ -422,7 +422,7 @@ $recentReviews = $stmt->fetchAll();
                                                 </span>
                                             </td>
                                             <td>
-                                                <a href="products.php?restock=<?php echo htmlspecialchars($product['product_id'] ?? ''); ?>" class="btn-small">
+                                                <a href="product.php?restock=<?php echo htmlspecialchars($product['product_id'] ?? ''); ?>" class="btn-small">
                                                     Restock
                                                 </a>
                                             </td>
@@ -564,6 +564,5 @@ $recentReviews = $stmt->fetchAll();
         resetIdleTimer();
     </script>
 </body>
-
 
 </html>

@@ -310,14 +310,6 @@ ob_start();
             </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="shop-footer">
-        <div class="container">
-            <p>&copy; <?php echo date('Y'); ?> SneakyPlay Gaming Store. All rights reserved.</p>
-            <p>Browse our latest gaming products and accessories</p>
-        </div>
-    </footer>
-
     <!-- JavaScript -->
     <script>
         function searchProducts() {

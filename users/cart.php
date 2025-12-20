@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Get cart items with product details
 $cart_query = "
-    SELECT 
+    SELECT DISTINCT
         ci.cart_item_id,
         ci.quantity,
         p.product_id,
@@ -276,7 +276,7 @@ unset($_SESSION['cart_message']);
                             <h2>Your cart is empty</h2>
                             <p>Looks like you haven't added any items to your cart yet.</p>
                             <div class="empty-cart-actions">
-                                <a href="../user/shop.php" class="btn btn-primary btn-lg">
+                                <a href="../users/shop.php" class="btn btn-primary btn-lg">
                                     <i class="fas fa-gamepad"></i> Browse Products
                                 </a>
                                 <a href="index.php" class="btn btn-secondary">
@@ -312,7 +312,7 @@ unset($_SESSION['cart_message']);
 
                     <div class="cart-actions-bottom">
                         <div class="cart-continue-shopping">
-                            <a href="../user/shop.php" class="btn btn-secondary">
+                            <a href="../users/shop.php" class="btn btn-secondary">
                                 <i class="fas fa-arrow-left"></i> Continue Shopping
                             </a>
                         </div>

@@ -49,13 +49,20 @@ foreach ($product_images as $img) {
     $image_lookup[$img['product_id']] = $img['image'];
 }
 
-// Add image paths to cart items
-foreach ($cart_summary['cart_items'] as &$item) {
+
+// Add image paths to cart items WITHOUT using reference (&)
+$cart_items_with_images = [];
+foreach ($cart_summary['cart_items'] as $item) {
     $image_filename = $image_lookup[$item['product_id']] ?? null;
     $item['image_src'] = !empty($image_filename)
         ? '../assets/image/' . htmlspecialchars($image_filename)
         : 'https://picsum.photos/seed/product' . $item['product_id'] . '/100/100.jpg';
+    $cart_items_with_images[] = $item;
 }
+
+
+// Use this new array for display
+$display_items = $cart_items_with_images;
 
 // Handle checkout form submission
 $error_message = '';
@@ -404,7 +411,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="order-items">
                             <h4><?php echo $cart_summary['total_items']; ?> Item(s) in Cart</h4>
                             <div class="items-list">
-                                <?php foreach ($cart_summary['cart_items'] as $item): ?>
+                                <?php foreach ($display_items as $item): ?>
                                     <div class="order-item">
                                         <div class="item-image">
                                             <img src="<?php echo $item['image_src']; ?>"

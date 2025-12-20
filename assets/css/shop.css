@@ -1,3 +1,4 @@
+/* Shop Page Styles - Transformed to Match User Dashboard */
 :root {
     --primary-color: #14141e;
     --secondary-color: #ff6b6b;
@@ -37,7 +38,7 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+/* Header - Updated to Match Dashboard */
 .shop-header {
     background: var(--gradient-primary);
     padding: 1rem 0;
@@ -206,7 +207,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Category Filter */
+/* Category Filter - FIXED ORGANIZED LAYOUT */
 .category-filter-section {
     margin-top: 1.5rem;
 }
@@ -286,7 +287,7 @@ body {
     gap: 2rem;
 }
 
-/* Product Card */
+/* Product Card - Updated to Match Dashboard */
 .product-card {
     background: white;
     border-radius: 15px;
@@ -303,7 +304,7 @@ body {
     border-color: var(--secondary-color);
 }
 
-/* FIXED: PRODUCT IMAGE */
+/* FIXED: PRODUCT IMAGE - RESIZED TO FIT COMPLETELY */
 .product-image {
     height: 220px;
     width: 100%;
@@ -313,15 +314,18 @@ body {
     justify-content: center;
     overflow: hidden;
     background: #ffffff;
+    /* White background */
     padding: 15px;
 }
 
 .product-image img {
     max-width: 80%;
+    /* Smaller size to fit completely */
     max-height: 80%;
     width: auto;
     height: auto;
     object-fit: contain;
+    /* Show complete product */
     object-position: center;
     transition: transform 0.4s ease;
 }
@@ -467,15 +471,16 @@ body {
     background: #2d2d44;
 }
 
-/* Remove number input spinners for all browsers */
 .qty-input::-webkit-outer-spin-button,
 .qty-input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-.qty-input[type="number"] {
-    -moz-appearance: textfield;
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .qty-input {
@@ -487,9 +492,11 @@ body {
     font-weight: 600;
     color: #1f2937;
     outline: none;
+    appearance:textfield;
+    -moz-appearance: textfield;
 }
 
-/* Add to Cart Button */
+/* Add to Cart Button - SAME HEADER COLOR */
 .add-to-cart-form {
     display: flex;
     justify-content: center;
@@ -682,5 +689,4 @@ body {
         max-width: 70%;
         max-height: 70%;
     }
-
 }
